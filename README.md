@@ -1,11 +1,9 @@
-# microservices-spring-boot
- ecommerce-microservices-spring
-
- User & Email Service
+Microsserviços Spring Boot - Ecommerce Microservices Primavera
+Serviço de Usuário e E-mail
 Este projeto é composto por dois microserviços principais: User Service e Email Service, implementados com Spring Boot. O objetivo é gerenciar usuários e enviar e-mails de confirmação de cadastro para os mesmos, usando RabbitMQ para comunicação entre os serviços e SMTP para envio de e-mails.
 
 Tecnologias Utilizadas
-User Service
+Serviço de Usuário
 Spring Boot: Framework para criar a aplicação.
 Spring Data JPA: Para persistência de dados no banco de dados MySQL.
 RabbitMQ: Para enviar mensagens entre os microserviços.
@@ -13,30 +11,39 @@ Spring Validation: Para validação de entradas (DTOs).
 Swagger: Para documentação da API.
 MySQL: Banco de dados relacional para armazenar as informações do usuário.
 Slf4j / Logback: Para logging de eventos importantes.
-Email Service
+Serviço de E-mail
 Spring Boot: Framework para a aplicação.
 Spring Mail: Para envio de e-mails via SMTP.
 RabbitMQ: Para receber mensagens de outros microserviços e processá-las.
 JavaMailSender: Para envio de e-mails.
 Slf4j / Logback: Para logging de eventos importantes.
 Como Rodar o Projeto
-1. Configurações Iniciais
+Configurações Iniciais
 Certifique-se de ter o MySQL e o RabbitMQ rodando localmente ou configurados adequadamente. Você pode usar serviços em nuvem como CloudAMQP para RabbitMQ e um banco MySQL local ou na nuvem.
 
-2. Configuração do Banco de Dados
+Configuração do Banco de Dados
 Crie um banco de dados chamado ms_user para o serviço de usuários e ms_email para o serviço de e-mails.
 
-3. Configuração do RabbitMQ
+Configuração do RabbitMQ
 A configuração do RabbitMQ está presente no arquivo application.properties de cada serviço. Adicione as credenciais adequadas para sua instância do RabbitMQ.
 
-4. Configuração do Email
+Configuração do E-mail
 No application.properties de cada serviço, configure as propriedades SMTP para envio de e-mails.
 
-5. Executando os Serviços
-User Service:
-Para rodar o serviço de usuários, execute o comando mvn spring-boot:run no diretório do User Service.
-Email Service:
-Para rodar o serviço de e-mail, execute o comando mvn spring-boot:run no diretório do Email Service.
+Executando os Serviços
+Serviço de Usuário: Para rodar o serviço de usuários, execute o comando:
+bash
+Copiar
+Editar
+mvn spring-boot:run
+no diretório do User Service.
+
+Serviço de E-mail: Para rodar o serviço de e-mail, execute o comando:
+bash
+Copiar
+Editar
+mvn spring-boot:run
+no diretório do Email Service.
 
 Fluxo de Funcionamento
 O User Service recebe uma requisição para criar um novo usuário via POST /users.
@@ -52,6 +59,3 @@ Spring Data JPA: Para o gerenciamento da persistência de dados.
 Spring Mail: Para envio de e-mails via SMTP.
 Spring AMQP: Para comunicação com o RabbitMQ.
 H2 Database: Usado para testes locais.
-
-
-
